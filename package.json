@@ -1,0 +1,24 @@
+{
+  "name": "hatchapp-cli-client",
+  "version": "1.0.0",
+  "description": "A cli client for hatchapp for simple tests",
+  "main": "bin/index.js",
+  "bin": {
+    "hatchapp-cli-client": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hatchapp",
+    "cli",
+    "test",
+    "client"
+  ],
+  "author": "Yengas",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "socket.io-client": "^2.1.1"
+  }
+}
