@@ -5,9 +5,10 @@ const logger = bunyan.createLogger({ name: 'socket-client' });
 const settings = JSON.parse(process.argv[2] || '{}');
 const url = process.argv[3] || 'http://localhost:8080';
 const readline = require('readline');
-const { roomId, userId } = settings || {};
+const token = process.env.JWT_TOKEN;
+const { roomId } = settings || {};
 const socket = socketio(url, {
-	query: { roomId, userId },
+	query: { roomId, token },
 });
 
 ['connect', 'disconnect', ...Object.keys(EVENTS).map((key) => EVENTS[key])].forEach((event) => {
