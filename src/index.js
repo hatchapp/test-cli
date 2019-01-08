@@ -17,8 +17,8 @@ interface.on('line', (line) => lineHandler !== null ? lineHandler(line) : null);
 interface.on('close', () => logger.info('closed'));
 
 async function main() {
-	const {token$, client$, stop: stopClient} = await createAnonymous();
-	const {socket$, stop: stopSocket} = createSocket(token$, roomId);
+	const { token$ } = await createAnonymous();
+	const socket$ = createSocket(token$, roomId);
 
 	const createSocketLineEmitter = socket => line => {
 		if (line === "room_change") {
